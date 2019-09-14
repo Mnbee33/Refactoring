@@ -29,9 +29,9 @@ class StatementTest {
         c.addRental(r);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Lion King" + "\t" + "2.0" + "\n");
-        expected.append("Amount owed is 2.0" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tLion King\t2.0\n");
+        expected.append("Amount owed is 2.0\n");
         expected.append("You earned 1 frequent renter points");
 
         result = c.statement();
@@ -46,9 +46,9 @@ class StatementTest {
         c.addRental(r);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Lion King" + "\t" + "3.5" + "\n");
-        expected.append("Amount owed is 3.5" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tLion King\t3.5\n");
+        expected.append("Amount owed is 3.5\n");
         expected.append("You earned 1 frequent renter points");
 
         result = c.statement();
@@ -63,9 +63,9 @@ class StatementTest {
         c.addRental(r);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Beauty And Beast" + "\t" + "6.0" + "\n");
-        expected.append("Amount owed is 6.0" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tBeauty And Beast\t6.0\n");
+        expected.append("Amount owed is 6.0\n");
         expected.append("You earned 2 frequent renter points");
 
         result = c.statement();
@@ -80,9 +80,9 @@ class StatementTest {
         c.addRental(r);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Little Mermaid" + "\t" + "1.5" + "\n");
-        expected.append("Amount owed is 1.5" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tLittle Mermaid\t1.5\n");
+        expected.append("Amount owed is 1.5\n");
         expected.append("You earned 1 frequent renter points");
 
         result = c.statement();
@@ -97,9 +97,9 @@ class StatementTest {
         c.addRental(r);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Little Mermaid" + "\t" + "3.0" + "\n");
-        expected.append("Amount owed is 3.0" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tLittle Mermaid\t3.0\n");
+        expected.append("Amount owed is 3.0\n");
         expected.append("You earned 1 frequent renter points");
 
         result = c.statement();
@@ -122,11 +122,11 @@ class StatementTest {
         c.addRental(rm);
 
         StringBuilder expected = new StringBuilder();
-        expected.append("Rental Record for Alice" + "\n");
-        expected.append("\t" + "Lion King" + "\t" + "2.0" + "\n");
-        expected.append("\t" + "Beauty And Beast" + "\t" + "6.0" + "\n");
-        expected.append("\t" + "Little Mermaid" + "\t" + "1.5" + "\n");
-        expected.append("Amount owed is 9.5" + "\n");
+        expected.append("Rental Record for Alice\n");
+        expected.append("\tLion King\t2.0\n");
+        expected.append("\tBeauty And Beast\t6.0\n");
+        expected.append("\tLittle Mermaid\t1.5\n");
+        expected.append("Amount owed is 9.5\n");
         expected.append("You earned 4 frequent renter points");
 
         result = c.statement();
