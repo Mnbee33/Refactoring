@@ -132,4 +132,21 @@ class StatementTest {
         result = c.statement();
         assertEquals(expected.toString(), result);
     }
+
+    @DisplayName("HTML形式の出力：延滞なしのレギュラー１本")
+    @Test
+    void TestRentARegularMovieOnHTML() {
+        Movie m = new Movie("Lion King", Movie.REGULAR);
+        Rental r = new Rental(m, 2);
+        c.addRental(r);
+
+        StringBuilder expected = new StringBuilder();
+        expected.append("<h1>Rentals for <em>Alice</em></h1><p>\n");
+        expected.append("Lion King: 2.0<br>\n");
+        expected.append("<p>You owe <em>2.0</em><p>\n");
+        expected.append("On this rental you earned <em>1</em> frequent renter points<p>");
+
+        result = c.htmlStatement();
+        assertEquals(expected.toString(), result);
+    }
 }
