@@ -8,16 +8,26 @@ public class Print {
     String name;
 
     void printOwing() {
-        double outstanding = 0.0;
+        printBanner();
+        double outstanding = getOutstanding();
+        printDetails(outstanding);
+    }
 
+    private void printBanner() {
         System.out.println("*******************");
         System.out.println("** Customer Owes **");
         System.out.println("*******************");
+    }
 
+    private double getOutstanding() {
+        double result = 0.0;
         for (Order each : orders) {
-            outstanding += each.getAmount();
+            result += each.getAmount();
         }
+        return result;
+    }
 
+    private void printDetails(double outstanding) {
         System.out.println("name: " + name);
         System.out.println("amount: " + outstanding);
     }
