@@ -5,9 +5,18 @@ public class Item2 {
     private int itemPrice;
 
     double price() {
-        final double basePrice = quantity * itemPrice;
-        final double quantityDiscount = Math.max(0, quantity - 500) * itemPrice * 0.05;
-        final double shipping = Math.min(basePrice * 0.1, 100.0);
-        return basePrice - quantityDiscount + shipping;
+        return basePrice() - quantityDiscount() + shipping();
+    }
+
+    private double shipping() {
+        return Math.min(basePrice() * 0.1, 100.0);
+    }
+
+    private int basePrice() {
+        return quantity * itemPrice;
+    }
+
+    private double quantityDiscount() {
+        return Math.max(0, quantity - 500) * itemPrice * 0.05;
     }
 }
