@@ -9,10 +9,7 @@ public class Print {
 
     void printOwing(double previousAmount) {
         printBanner();
-        double outstanding = previousAmount * 1.2;
-        for (Order each : orders) {
-            outstanding += each.getAmount();
-        }
+        double outstanding = getOutstanding(previousAmount * 1.2);
         printDetails(outstanding);
     }
 
@@ -20,6 +17,14 @@ public class Print {
         System.out.println("*******************");
         System.out.println("** Customer Owes **");
         System.out.println("*******************");
+    }
+
+    private double getOutstanding(double initialValue) {
+        double result = initialValue;
+        for (Order each : orders) {
+            result += each.getAmount();
+        }
+        return result;
     }
 
     private void printDetails(double outstanding) {
