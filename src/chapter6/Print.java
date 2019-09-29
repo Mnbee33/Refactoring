@@ -7,9 +7,12 @@ public class Print {
     List<Order> orders = new ArrayList<>();
     String name;
 
-    void printOwing() {
+    void printOwing(double previousAmount) {
         printBanner();
-        double outstanding = getOutstanding();
+        double outstanding = previousAmount * 1.2;
+        for (Order each : orders) {
+            outstanding += each.getAmount();
+        }
         printDetails(outstanding);
     }
 
@@ -17,14 +20,6 @@ public class Print {
         System.out.println("*******************");
         System.out.println("** Customer Owes **");
         System.out.println("*******************");
-    }
-
-    private double getOutstanding() {
-        double result = 0.0;
-        for (Order each : orders) {
-            result += each.getAmount();
-        }
-        return result;
     }
 
     private void printDetails(double outstanding) {
