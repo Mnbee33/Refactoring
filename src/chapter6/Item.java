@@ -5,13 +5,18 @@ public class Item {
     int itemPrice;
 
     double getPrice() {
-        int basePrice = quantity * itemPrice;
-        double discountFactor;
-        if (basePrice > 1000) {
-            discountFactor = 0.95;
+        return basePrice() * discountFactor();
+    }
+
+    private double discountFactor() {
+        if (basePrice() > 1000) {
+            return 0.95;
         } else {
-            discountFactor = 0.98;
+            return 0.98;
         }
-        return basePrice * discountFactor;
+    }
+
+    private int basePrice() {
+        return quantity * itemPrice;
     }
 }
