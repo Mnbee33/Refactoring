@@ -1,6 +1,8 @@
 package chapter7;
 
 public class AccountType {
+    private double interestRate;
+
     public boolean isPremium() {
         return false;
     }
@@ -15,5 +17,13 @@ public class AccountType {
         } else {
             return daysOverdrawn * 1.75;
         }
+    }
+
+    public void setInterestRate(double rate) {
+        this.interestRate = rate;
+    }
+
+    public double getInterestRate() {
+        return interestRate;
     }
 }
