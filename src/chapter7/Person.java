@@ -2,30 +2,30 @@ package chapter7;
 
 public class Person {
     private String name;
-    private String officeAreaCode;
-    private String officeNumber;
+
+    private TelephoneNumber officeTelephoneNumber = new TelephoneNumber();
 
     public String getName() {
         return name;
     }
 
     public String getTelephoneNumber() {
-        return String.format("(%s)%s", officeAreaCode, officeNumber);
+        return String.format("(%s)%s", officeTelephoneNumber.getOfficeAreaCode(), officeTelephoneNumber.getOfficeNumber());
     }
 
     String getOfficeAreaCode() {
-        return officeAreaCode;
+        return officeTelephoneNumber.getOfficeAreaCode();
     }
 
     String getOfficeNumber() {
-        return officeNumber;
+        return officeTelephoneNumber.getOfficeAreaCode();
     }
 
     void setOfficeAreaCode(String officeAreaCode) {
-        this.officeAreaCode = officeAreaCode;
+        officeTelephoneNumber.setOfficeAreaCode(officeAreaCode);
     }
 
     void setOfficeNumber(String officeNumber) {
-        this.officeNumber = officeNumber;
+        officeTelephoneNumber.setOfficeNumber(officeNumber);
     }
 }
